@@ -1,0 +1,53 @@
+# VCS
+.git
+.gitignore
+.gitattributes
+
+# Python cache/bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments (local, not the uv-managed one in Docker)
+.venv/
+venv/
+env/
+
+# Build / packaging artifacts
+*.egg-info/
+.eggs/
+*.egg
+build/
+dist/
+.wheelhouse/
+
+# OS/editor files
+.DS_Store
+*.swp
+*.swo
+*.~lock.*
+.idea/
+.vscode/
+*.bak
+*.tmp
+
+# Logs
+*.log
+*.out
+
+# Django runtime files
+db.sqlite3
+*.sqlite3
+media/
+staticfiles/
+node_modules/
+
+# Test / coverage
+pytest_cache/
+.pytest_cache/
+
+# Docker itself
+Dockerfile.*
+docker-compose*.yml

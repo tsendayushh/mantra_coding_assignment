@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / compiled files
+*.pyc
+__pycache__/
+*.o
+*.so
+*.egg
+*.egg-info/
+
+# Django-specific files
+*.log
+*.pot
+db.sqlite3
+local_settings.py
+media/ # Or other directories for user-uploaded files
+static/ # If you are collecting static files locally and don't want to track them
+
+# Virtual environment
+.env
+venv/
+env/
+
+# IDE-specific files
+.idea/ # PyCharm
+.vscode/ # VS Code
+*.sublime-project
+*.sublime-workspace
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Test and coverage files
+.coverage
+.tox/
+.eggs/
+
+# Other temporary or build-related files
+tmp/
+*.swp
