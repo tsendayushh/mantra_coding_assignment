@@ -7,19 +7,25 @@
 ```
 uv sync --all-groups
 
-uv run manage.py migrate
+# uv run manage.py migrate
 ```
 
 ### Run tests
 
 ```
-uv run poe test
+docker compose exec web uv run poe test
 ```
 
 ### Run server
 
 ```
-uv run manage.py runserver
+# uv run manage.py runserver
+docker compose up -d --build
+```
+
+### To load the mock data
+```
+docker compose exec web uv run manage.py init_data
 ```
 
 
