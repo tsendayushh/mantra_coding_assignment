@@ -18,7 +18,7 @@ class UserSummaryAggregator:
         from_date: datetime,
         to_date: datetime,
         granularity: str, # "hour", "day", "month"
-        tz_name: str,
+        tz_name: str = "",
         window_size: int = 3, # Default window size for calculating the moving average
     ):
         if granularity not in self.GRANULARITY_MAP:
