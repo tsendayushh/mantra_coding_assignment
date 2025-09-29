@@ -19,11 +19,11 @@ class TestAggregationService:
             word_count=100,
             study_time=25,
             timestamp=datetime.now(pytz.UTC),
-            timezone='UTC'
+            timezone="UTC",
         )
         assert log.word_count == 100
         assert log.study_time == 25
-    
+
     def test_idempotency_constraint(self):
         timestamp = datetime.now(pytz.UTC)
         user = self.user
@@ -33,9 +33,9 @@ class TestAggregationService:
             word_count=100,
             study_time=25,
             timestamp=timestamp,
-            timezone='UTC',
+            timezone="UTC",
         )
-        
+
         # Attempt to create duplicate should fail
         with pytest.raises(IntegrityError):
             LearningLog.objects.create(
@@ -43,5 +43,5 @@ class TestAggregationService:
                 word_count=100,
                 study_time=25,
                 timestamp=timestamp,
-                timezone='UTC',
+                timezone="UTC",
             )

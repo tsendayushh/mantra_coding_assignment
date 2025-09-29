@@ -28,6 +28,11 @@ docker compose up -d --build
 docker compose exec web uv run manage.py init_data
 ```
 
+### Create a .env file similar to .env.example
+```
+cp .env.example .env
+```
+
 
 ### Lint and format code
 

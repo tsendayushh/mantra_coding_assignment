@@ -41,4 +41,6 @@ class TestAggregationService:
         assert len(results) == 5
         assert results[0]["total_word_count"] == 100
         assert results[0]["moving_average_word_count"] is None  # Insufficient data
-        assert results[2]["moving_average_word_count"] is not None  # Asserting that the moving averages are calculated from the nth element
+        assert (
+            results[2]["moving_average_word_count"] is not None
+        )  # Asserting that the moving averages are calculated from the nth element

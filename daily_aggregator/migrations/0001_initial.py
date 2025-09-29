@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -15,23 +14,38 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='LearningLog',
+            name="LearningLog",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('word_count', models.IntegerField()),
-                ('study_time', models.IntegerField()),
-                ('timestamp', models.DateTimeField()),
-                ('client_timestamp', models.DateTimeField(blank=True, null=True)),
-                ('timezone', models.CharField(default='UTC', max_length=50)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='learning_logs', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("word_count", models.IntegerField()),
+                ("study_time", models.IntegerField()),
+                ("timestamp", models.DateTimeField()),
+                ("client_timestamp", models.DateTimeField(blank=True, null=True)),
+                ("timezone", models.CharField(default="UTC", max_length=50)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="learning_logs",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Learning Log',
-                'verbose_name_plural': 'Learning Logs',
-                'db_table': 'learning_logs',
-                'unique_together': {('user', 'timestamp')},
+                "verbose_name": "Learning Log",
+                "verbose_name_plural": "Learning Logs",
+                "db_table": "learning_logs",
+                "unique_together": {("user", "timestamp")},
             },
         ),
     ]

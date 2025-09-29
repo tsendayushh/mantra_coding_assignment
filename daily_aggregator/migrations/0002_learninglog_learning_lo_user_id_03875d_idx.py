@@ -5,15 +5,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('daily_aggregator', '0001_initial'),
+        ("daily_aggregator", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.AddIndex(
-            model_name='learninglog',
-            index=models.Index(fields=['user', 'timestamp'], name='learning_lo_user_id_03875d_idx'),
+            model_name="learninglog",
+            index=models.Index(
+                fields=["user", "timestamp"], name="learning_lo_user_id_03875d_idx"
+            ),
         ),
     ]
