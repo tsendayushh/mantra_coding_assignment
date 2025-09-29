@@ -51,3 +51,7 @@ pytest_cache/
 # Docker itself
 Dockerfile.*
 docker-compose*.yml
+
+# Ruff cache
+ruff_cache/
+.ruff_cache/

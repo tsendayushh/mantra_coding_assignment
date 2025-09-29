@@ -9,7 +9,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     UV_LINK_MODE=copy \
     UV_PYTHON_DOWNLOADS=never \
-    UV_PROJECT_ENVIRONMENT=/opt/.venv
+    UV_PROJECT_ENVIRONMENT=/opt/.venv \
+    RUFF_CACHE_DIR=/tmp/.ruff_cache 
 
 # install uv
 COPY --from=ghcr.io/astral-sh/uv:0.8.14 /uv /uvx /bin/
