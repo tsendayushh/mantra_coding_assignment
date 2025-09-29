@@ -28,3 +28,8 @@ class LearningLog(models.Model):
         verbose_name_plural = "Learning Logs"
 
         unique_together = ("user", "timestamp") # Ensuring idempotency
+
+        # by indexing user and timestamp for faster queries
+        indexes = [
+            models.Index(fields=['user', 'timestamp']),  # Primary query pattern
+        ]
