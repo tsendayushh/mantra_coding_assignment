@@ -18,6 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from assignment.views import initialize_data, UserViewSet
+from daily_aggregator.views import UserSummaryView, LogRegistrationView
 from rest_framework.routers import DefaultRouter
 
 
@@ -28,4 +29,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/v1/", include(router.urls)),
     path("init_data/", initialize_data, name="initialize_data"),
+    path("recordsjson/", LogRegistrationView.as_view(), name="create_log"),
+    path(
+        "users/<int:user_id>/summary/", UserSummaryView.as_view(), name="user-summary"
+    ),
 ]
