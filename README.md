@@ -42,6 +42,11 @@ docker compose up -d --build
 docker compose exec web uv run manage.py init_data
 ```
 
+### 4(Optional).To use the pgadmin uncomment the pgadmin service in the .docker-compose.yml file.
+```
+docker compose exec web uv run manage.py init_data
+```
+
 ## Improvement points
 
 
