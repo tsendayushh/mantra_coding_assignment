@@ -7,7 +7,6 @@
 ```
 uv sync --all-groups
 
-# uv run manage.py migrate
 ```
 
 ### Run tests
@@ -16,24 +15,6 @@ uv sync --all-groups
 docker compose exec web uv run poe test
 ```
 
-### Run server
-
-```
-# uv run manage.py runserver
-docker compose up -d --build
-```
-
-### To load the mock data
-```
-docker compose exec web uv run manage.py init_data
-```
-
-### Create a .env file similar to .env.example
-```
-cp .env.example .env
-```
-
-
 ### Lint and format code
 
 ```
@@ -41,7 +22,27 @@ uv run poe lint
 uv run poe format
 ```
 
-### Improvement points
+
+## To run the app
+
+### 1.Create a .env file similar to .env.example
+```
+cp .env.example .env
+```
+
+### 2.Run server
+
+```
+# uv run manage.py runserver
+docker compose up -d --build
+```
+
+### 3.Load the mock data
+```
+docker compose exec web uv run manage.py init_data
+```
+
+## Improvement points
 
 
 #### DB level improvements:
